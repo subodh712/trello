@@ -1,0 +1,11 @@
+<div>
+  <div class="add-list">
+    <button (click)="addList()">ADD LIST</button>
+  </div>
+
+  <div class="lists" cdkDropListGroup>
+    <ng-container *ngFor="let list of lists">
+      <app-list [list]="list" (onDelete)="deleteList($event)"></app-list>
+    </ng-container>
+  </div>
+</div>

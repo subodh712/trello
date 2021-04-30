@@ -1,0 +1,15 @@
+<div class="list" cdkDropList [cdkDropListData]="list" (cdkDropListDropped)="drop($event)">
+  <div class="title">
+    <h3>{{list.title}}</h3>
+    <app-close-button (click)="deleteList()"></app-close-button>
+  </div>
+
+  <div>
+    <div *ngFor="let item of list.items" cdkDrag >
+      <app-item [item]="item" (onDelete)="deleteItem(item)"></app-item>
+    </div>
+  </div>
+  <div class="add-item">
+    <img class="icon" src="../../../assets/add.svg" (click)="addItem()"/>
+  </div>
+</div>
